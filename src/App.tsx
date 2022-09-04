@@ -11,7 +11,7 @@ const App = () => {
 			<p className='text-lg font-semibold'>
 				React 18, TypeScript, Tailwind 3 w/ Daisy UI, React Router v6
 			</p>
-
+			<h2 className='text-lg font-bold'>Test!</h2>
 			<div className='w-10 h-10 border-2 flex items-center justify-center  border-slate-100 rounded-full p-8'>
 				<span className='text-xl font-bold'>{counter}</span>
 			</div>
