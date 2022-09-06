@@ -1,24 +1,13 @@
 import { useState, useEffect } from 'react';
-import { MoviesListResponse } from '../models/Movies';
-
-interface sentData {
-	id: number;
-	title: string;
-	posterUrl: string;
-	backdropUrl: string;
-	rating: number;
-	genre_ids: number[];
-	overview: string;
-	release_date: string;
-}
+import { MovieDetailsType, MoviesListResponse } from '../models/Movies';
 
 const useFetch = (url: string) => {
-	const [data, setData] = useState<sentData[]>([]);
+	const [data, setData] = useState<MovieDetailsType[]>([]);
 
 	const fetchHandler = async (url: string) => {
 		const response = await fetch(url);
 		const data: MoviesListResponse = await response.json();
-		const movies = await data.results;
+		const movies = data.results;
 
 		const moviesData = movies.map((movie) => {
 			const {

@@ -1,20 +1,9 @@
 import { useContext } from 'react';
 import { DataContext } from '../../context/DataContext';
+import { Poster as PosterType } from '../../models/Movies';
 import { HeartIcon, TrendingIcon } from '../Icons';
 
-interface Poster {
-	id: number;
-	title: string;
-	posterUrl: string;
-	backdropUrl: string;
-	rating: number;
-	genreIds: number[];
-	overview: string;
-	releaseDate: string;
-	index: number;
-}
-
-const Poster = (props: Poster) => {
+const Poster = (props: PosterType) => {
 	const {
 		id,
 		title,
@@ -40,7 +29,11 @@ const Poster = (props: Poster) => {
 	const size = 'original';
 	const imgUrl = `${imgPath}${size}`;
 
-	const { setData } = useContext(DataContext);
+	const dataContext = useContext(DataContext);
+	if (!dataContext) {
+		return null;
+	}
+	const { setData } = dataContext;
 
 	return (
 		<li

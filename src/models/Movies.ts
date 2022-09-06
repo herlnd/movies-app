@@ -21,3 +21,18 @@ export interface MoviesListResponse {
 	total_pages: number;
 	total_results: number;
 }
+
+export interface MovieDetailsType {
+	id: number;
+	title: string;
+	posterUrl: string;
+	backdropUrl: string;
+	rating: number;
+	genreIds: number[];
+	overview: string;
+	releaseDate: string;
+}
+
+export interface Poster extends MovieDetailsType {
+	index: number;
+}

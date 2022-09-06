@@ -1,9 +1,15 @@
-import { createContext, useState } from 'react';
+import { createContext, PropsWithChildren, useState } from 'react';
+import { MovieDetailsType } from '../models/Movies';
 
-export const DataContext = createContext();
+type Fix = {
+	data: MovieDetailsType | null;
+	setData: React.Dispatch<React.SetStateAction<MovieDetailsType | null>>;
+};
 
-const DataProvider = ({ children }) => {
-	const [data, setData] = useState(null);
+export const DataContext = createContext<Fix | null>(null);
+
+const DataProvider = ({ children }: PropsWithChildren) => {
+	const [data, setData] = useState<MovieDetailsType | null>(null);
 
 	return (
 		<DataContext.Provider value={{ data, setData }}>

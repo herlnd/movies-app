@@ -1,10 +1,17 @@
-import { useContext } from 'react';
-import { DataContext } from '../../context/DataContext';
+// import { useContext } from 'react';
+// import { DataContext } from '../../context/DataContext';
+import type { MovieDetailsType } from '../../models/Movies';
 
-const MovieDetails = () => {
-	const { data: movie } = useContext(DataContext);
+interface DetailProps {
+	movieDetails: MovieDetailsType;
+}
 
-	const { title, posterUrl, rating, genreIds, overview, releaseDate } = movie;
+const MovieDetails = (props: DetailProps) => {
+	const {
+		movieDetails: { title, posterUrl, rating, overview, releaseDate },
+	} = props;
+
+	// const { data: movie } = useContext(DataContext);
 
 	return (
 		<main className='flex justify-center gap-8 items-start'>

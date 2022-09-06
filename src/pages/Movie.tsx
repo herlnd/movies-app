@@ -6,13 +6,22 @@ import Hero from '../components/Layout/Hero';
 import MovieDetails from '../components/Movies/MovieDetails';
 
 const Movie = () => {
-	const { data } = useContext(DataContext);
+	const contextData = useContext(DataContext);
+	if (!contextData) {
+		return null;
+	}
+	const { data } = contextData;
+
+	if (!data) {
+		return null;
+	}
+
 	const { backdropUrl } = data;
 	return (
 		<Layout>
 			<>
 				<Hero bgImg={`https://image.tmdb.org/t/p/original${backdropUrl}`}>
-					<MovieDetails movieData={data} />
+					<MovieDetails movieDetails={data} />
 				</Hero>
 			</>
 		</Layout>
