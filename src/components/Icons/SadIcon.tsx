@@ -2,7 +2,7 @@ interface iconStyle {
 	iconStyle: string;
 }
 
-const SadIcon = (props: iconStyle) => {
+export const SadIcon = (props: iconStyle) => {
 	const { iconStyle } = props;
 	return (
 		<svg
@@ -21,5 +21,3 @@ const SadIcon = (props: iconStyle) => {
 		</svg>
 	);
 };
-
-export default SadIcon;

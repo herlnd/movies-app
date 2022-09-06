@@ -1,4 +1,4 @@
-const TrendingIcon = () => {
+export const TrendingIcon = () => {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -16,5 +16,3 @@ const TrendingIcon = () => {
 		</svg>
 	);
 };
-
-export default TrendingIcon;

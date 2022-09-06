@@ -2,7 +2,7 @@ interface starIcon {
 	fill: string;
 }
 
-const StarIcon = (props: starIcon) => {
+export const StarIcon = (props: starIcon) => {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -20,5 +20,3 @@ const StarIcon = (props: starIcon) => {
 		</svg>
 	);
 };
-
-export default StarIcon;
