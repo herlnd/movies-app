@@ -16,9 +16,11 @@ const Hero = (props: Hero) => {
 				backgroundImage: `url(${imgUrl})`,
 			}}
 		>
-			<div className='hero-overlay bg-opacity-60 flex flex-col gap-20'>
+			<div className='hero-overlay bg-opacity-60 flex flex-col'>
 				<MainNavigation />
-				{props.children}
+				<div className='flex-col justify-center items-center'>
+					{props.children}
+				</div>
 			</div>
 		</div>
 	);
