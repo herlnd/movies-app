@@ -4,20 +4,30 @@ const useUrl = (fetchAction: string, fetchTerm?: string) => {
 	let action;
 	let param;
 	let term;
+	let movie;
 
 	if (fetchAction === 'search') {
 		action = 'search/';
-		param = 'query=';
+		param = '&query=';
 		term = fetchTerm;
+		movie = 'movie';
 	}
 
 	if (fetchAction === 'discover') {
 		action = 'discover/';
-		param = 'sort_by=';
+		param = '&sort_by=';
 		term = 'popularity.desc';
+		movie = 'movie';
 	}
 
-	return `${baseUrl}${action}movie?api_key=${key}&${param}${term}`;
+	if (fetchAction === 'getMovie') {
+		action = 'movie/';
+		param = '';
+		term = '';
+		movie = fetchTerm;
+	}
+
+	return `${baseUrl}${action}${movie}?api_key=${key}${param}${term}`;
 };
 
 export default useUrl;

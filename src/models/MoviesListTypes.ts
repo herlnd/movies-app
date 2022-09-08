@@ -1,4 +1,4 @@
-export interface Movie {
+export interface MovieType {
 	adult: boolean;
 	backdrop_path: string;
 	genre_ids: number[];
@@ -15,24 +15,20 @@ export interface Movie {
 	vote_count: number;
 }
 
-export interface MoviesListResponse {
+export interface MoviesListRawData {
 	page: number;
-	results: Movie[];
+	results: MovieType[];
 	total_pages: number;
 	total_results: number;
 }
 
-export interface MovieDetailsType {
+export interface MoviesListData {
 	id: number;
 	title: string;
 	posterUrl: string;
-	backdropUrl: string;
 	rating: number;
-	genreIds: number[];
-	overview: string;
-	releaseDate: string;
 }
 
-export interface Poster extends MovieDetailsType {
+export interface PosterType extends MoviesListData {
 	index: number;
 }

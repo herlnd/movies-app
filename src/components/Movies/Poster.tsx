@@ -1,20 +1,8 @@
-import { useContext } from 'react';
-import { DataContext } from '../../context/DataContext';
-import { Poster as PosterType } from '../../models/Movies';
+import { PosterType } from '../../models/MoviesListTypes';
 import { HeartIcon, TrendingIcon } from '../Icons';
 
 const Poster = (props: PosterType) => {
-	const {
-		id,
-		title,
-		posterUrl,
-		backdropUrl,
-		rating,
-		genreIds,
-		overview,
-		releaseDate,
-		index,
-	} = props;
+	const { title, posterUrl, rating, index } = props;
 
 	// Styles
 	const bgAnimation =
@@ -29,28 +17,8 @@ const Poster = (props: PosterType) => {
 	const size = 'original';
 	const imgUrl = `${imgPath}${size}`;
 
-	const dataContext = useContext(DataContext);
-	if (!dataContext) {
-		return null;
-	}
-	const { setData } = dataContext;
-
 	return (
-		<li
-			className='relative group'
-			onClick={() => {
-				setData({
-					id,
-					title,
-					posterUrl,
-					backdropUrl,
-					rating,
-					genreIds,
-					overview,
-					releaseDate,
-				});
-			}}
-		>
+		<li className='relative group'>
 			<img
 				className='rounded-lg'
 				src={`${imgUrl}${posterUrl}`}

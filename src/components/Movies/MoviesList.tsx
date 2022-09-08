@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import useUrl from '../../hooks/useUrl';
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../hooks/useFetchMovies';
 import Poster from './Poster';
+import { MoviesListData } from '../../models/MoviesListTypes';
 
 const MoviesList = () => {
 	const url = useUrl('discover');
-	const trendingMovies = useFetch(url);
+	const trendingMovies: MoviesListData[] = useFetch(url);
 
 	const topTen = trendingMovies.slice(0, 10).map((movie, index) => {
 		return (

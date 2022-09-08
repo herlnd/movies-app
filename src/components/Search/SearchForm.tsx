@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../hooks/useFetchMovies';
 import useUrl from '../../hooks/useUrl';
 
 import { SearchIcon } from '../Icons';
