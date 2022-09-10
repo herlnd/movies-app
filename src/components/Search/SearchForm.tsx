@@ -1,12 +1,15 @@
 import React, { useState, useRef } from 'react';
-import useFetch from '../../hooks/useFetchMovies';
-import useUrl from '../../hooks/useUrl';
-
 import { SearchIcon } from '../Icons';
 
-const Search = () => {
+interface SearchType {
+	searchTerm: (value: string) => void;
+}
+
+const Search = (props: SearchType) => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const searchRef = useRef<HTMLInputElement>(null);
+
+	props.searchTerm(searchTerm);
 
 	const clickHandler = (e: React.MouseEvent) => {
 		e.preventDefault();
@@ -16,10 +19,6 @@ const Search = () => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(e.currentTarget.value);
 	};
-
-	const url = useUrl('search', searchTerm);
-	const someMovies = useFetch(url);
-	console.log(someMovies);
 
 	return (
 		<form className='form-control'>
@@ -35,7 +34,7 @@ const Search = () => {
 				<button
 					type='submit'
 					onClick={clickHandler}
-					className='btn btn-square bg-slate-100 border-slate-100 text-gray-800 hover:bg-gray-800 hover:border-gray-800 hover:text-slate-100'
+					className='btn btn-square bg-slate-100 border-slate-100 text-gray-800 hover:bg-slate-300 hover:border-slate-300'
 				>
 					<SearchIcon />
 				</button>

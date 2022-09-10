@@ -31,4 +31,5 @@ export interface MoviesListData {
 
 export interface PosterType extends MoviesListData {
 	index: number;
+	showIndex: boolean;
 }

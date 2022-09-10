@@ -27,7 +27,7 @@ const useUrl = (fetchAction: string, fetchTerm?: string) => {
 		movie = fetchTerm;
 	}
 
-	return `${baseUrl}${action}${movie}?api_key=${key}${param}${term}`;
+	return `${baseUrl}${action}${movie}?api_key=${key}&include_adult=false${param}${term}`;
 };
 
 export default useUrl;

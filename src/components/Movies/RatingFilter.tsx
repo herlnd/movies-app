@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { StarIcon } from '../Icons';
 
-const RatingFilter = () => {
+interface RatingFilterType {
+	ratingValue: (value: number) => void;
+}
+
+const RatingFilter = (props: RatingFilterType) => {
 	const [rating, setRating] = useState(0);
 
 	return (
@@ -10,7 +14,15 @@ const RatingFilter = () => {
 			{[...Array(5)].map((item, idx) => {
 				const index = idx * 2 + 2;
 				return (
-					<button key={index} type='button' onClick={() => setRating(index)}>
+					<button
+						key={index}
+						type='button'
+						onClick={() => {
+							setRating(rating === index ? 0 : index);
+							props.ratingValue(rating === index ? 0 : index - 2);
+							console.log(rating, index - 2);
+						}}
+					>
 						<StarIcon
 							fill={
 								index <= rating ? 'hsl(215, 28%, 17%)' : 'hsl(216, 12%, 84%)'

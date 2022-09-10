@@ -1,7 +1,7 @@
 import Layout from '../components/Layout/Layout';
 import Hero from '../components/Layout/Hero';
 import MovieDetails from '../components/Movies/MovieDetails';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Movie = () => {
 	const [background, setBackground] = useState('');
