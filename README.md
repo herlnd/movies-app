@@ -17,7 +17,10 @@ This app also serves as a playground to consume a REST API, use a routing librar
 
 ## Features
 
-- User authentication
-- Movies search
-- Movies details
-- User's favorite movies.
+- First Stage:
+  - Movies search
+  - Movies details
+
+- Second Stage (pending):
+  - User authentication
+  - User's favorite movies.
