@@ -1,19 +1,18 @@
-import React, { useState, useRef } from "react";
-import { SearchIcon } from "../Icons";
+import React, { useState, useRef } from 'react';
+import { SearchIcon } from '../Icons';
 
 interface SearchType {
   searchTerm: (value: string) => void;
 }
 
 const Search = (props: SearchType) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const searchRef = useRef<HTMLInputElement>(null);
 
   props.searchTerm(searchTerm);
 
   const clickHandler = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log(searchRef.current?.value);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,20 +20,20 @@ const Search = (props: SearchType) => {
   };
 
   return (
-    <form className="form-control">
-      <div className="input-group">
+    <form className='form-control'>
+      <div className='input-group'>
         <input
-          type="text"
-          placeholder="Search movies…"
-          className="w-full input input-bordered bg-slate-50 text-gray-800"
+          type='text'
+          placeholder='Search movies…'
+          className='w-full input input-bordered bg-slate-50 text-gray-800'
           value={searchTerm}
           onChange={handleChange}
           ref={searchRef}
         />
         <button
-          type="submit"
+          type='submit'
           onClick={clickHandler}
-          className="btn btn-square bg-slate-100 border-slate-100 text-gray-800 hover:bg-slate-300 hover:border-slate-300"
+          className='btn btn-square bg-slate-100 border-slate-100 text-gray-800 hover:bg-slate-300 hover:border-slate-300'
         >
           <SearchIcon />
         </button>

@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import type {
   MovieDataType,
   MovieDetailsType,
-} from "../models/MovieDetailsType";
+} from '../models/MovieDetailsType';
 
 const useFetchDetails = (url: string) => {
   const [data, setData] = useState<MovieDetailsType>({
-    title: "",
-    overview: "",
+    title: '',
+    overview: '',
     year: 0,
     rating: 0,
-    backdropUrl: "",
-    posterUrl: "",
+    backdropUrl: '',
+    posterUrl: '',
     genresArr: [],
   });
 
