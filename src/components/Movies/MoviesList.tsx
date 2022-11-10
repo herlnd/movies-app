@@ -4,6 +4,7 @@ import useUrl from '../../hooks/useUrl';
 import useFetch from '../../hooks/useFetchMovies';
 import { MoviesListData } from '../../models/MoviesListTypes';
 import Poster from './Poster';
+import Carousel from '../Carousel/Carousel';
 
 const MoviesList = React.forwardRef<HTMLElement>((props, ref) => {
   const url = useUrl('discover');
@@ -18,11 +19,17 @@ const MoviesList = React.forwardRef<HTMLElement>((props, ref) => {
   });
 
   return (
-    <section ref={ref} className='flex-col p-8 items-center'>
-      <h1 className='text-3xl pb-8 text-slate-100 font-bold'>
+    <section
+      ref={ref}
+      className='w-full flex flex-col items-start justify-center px-2 lg:p-8'
+    >
+      <h1 className='text-xl text-slate-100 font-bold pt-4 pb-2 lg:pt-0 lg:pb-8 lg:text-3xl'>
         Trending movies
       </h1>
-      <ol className='grid grid-cols-5 gap-8 place-items-center'>{topTen}</ol>
+
+      <Carousel displayElements={topTen} />
+
+      {/* <ol className='grid grid-cols-5 gap-8 place-items-center'>{topTen}</ol> */}
     </section>
   );
 });

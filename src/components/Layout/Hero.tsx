@@ -1,5 +1,5 @@
-import MainNavigation from "../Navigation/MainNavigation";
-import defaultImg from "../../assets/heroBgImg.jpg";
+import MainNavigation from '../Navigation/MainNavigation';
+import defaultImg from '../../assets/heroBgImg.jpg';
 
 interface Hero {
   bgImg?: string;
@@ -11,14 +11,14 @@ const Hero = (props: Hero) => {
 
   return (
     <div
-      className="hero min-h-screen"
+      className='hero h-1/4 lg:h-screen xl:h-1/3'
       style={{
         backgroundImage: `url(${imgUrl})`,
       }}
     >
-      <div className="hero-overlay bg-opacity-60 flex flex-col">
+      <div className='hero-overlay bg-opacity-60 flex flex-col'>
         <MainNavigation />
-        <div className="flex-col justify-center items-center">
+        <div className='flex-col justify-center items-center'>
           {props.children}
         </div>
       </div>

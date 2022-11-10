@@ -20,12 +20,12 @@ const Search = (props: SearchType) => {
   };
 
   return (
-    <form className='form-control'>
-      <div className='input-group'>
+    <form className='form-control w-full px-4 lg:px-0'>
+      <div className='input-group flex justify-center items-center'>
         <input
           type='text'
           placeholder='Search movies…'
-          className='w-full input input-bordered bg-slate-50 text-gray-800'
+          className='w-11/12 md:w-9/12 lg:w-2/5 input input-bordered bg-slate-50 text-gray-800'
           value={searchTerm}
           onChange={handleChange}
           ref={searchRef}

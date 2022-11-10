@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import Footer from './Footer';
 
 interface Layout {
   children: JSX.Element;
@@ -6,10 +6,12 @@ interface Layout {
 
 const Layout = (props: Layout) => {
   return (
-    <>
-      {props.children}
-      <Footer />
-    </>
+    <div className='w-full h-full flex flex-col justify-center items-center'>
+      <main className='w-full h-full lg:max-w-[1440px]'>
+        {props.children}
+        <Footer />
+      </main>
+    </div>
   );
 };
 

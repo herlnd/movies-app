@@ -1,10 +1,11 @@
-import { Link, Search } from "react-router-dom";
-import useUrl from "../../hooks/useUrl";
-import useFetch from "../../hooks/useFetchMovies";
-import { MoviesListData } from "../../models/MoviesListTypes";
-import Poster from "./Poster";
-import RatingFilter from "./RatingFilter";
-import { useState } from "react";
+import { Link, Search } from 'react-router-dom';
+import useUrl from '../../hooks/useUrl';
+import useFetch from '../../hooks/useFetchMovies';
+import { MoviesListData } from '../../models/MoviesListTypes';
+import Poster from './Poster';
+import RatingFilter from './RatingFilter';
+import { useState } from 'react';
+import Carousel from '../Carousel/Carousel';
 
 interface SearchResultsType {
   searchTerm: string;
@@ -13,7 +14,7 @@ interface SearchResultsType {
 const SearchResults = (props: SearchResultsType) => {
   const [rating, setRating] = useState(0);
 
-  const url = useUrl("search", props.searchTerm);
+  const url = useUrl('search', props.searchTerm);
   const trendingMovies: MoviesListData[] = useFetch(url);
 
   const topTen = trendingMovies
@@ -33,17 +34,18 @@ const SearchResults = (props: SearchResultsType) => {
 
   return (
     <>
-      {trendingMovies.length > 0 && (
-        <section className="flex-col p-8 items-center">
-          <h1 className="text-3xl pb-8 text-slate-100 font-bold">
+      {trendingMovies.length > 0 ? (
+        <section className='flex-col p-8 items-center'>
+          <h1 className='text-3xl pb-8 text-slate-100 font-bold'>
             Search Results
           </h1>
           <RatingFilter ratingValue={filterHandler} />
-          <ol className="grid grid-cols-5 gap-8 place-items-center">
-            {topTen}
-          </ol>
+          <div className='w-full'>
+            <Carousel displayElements={topTen} />
+          </div>
+          {/* <ol className='grid grid-cols-5 gap-8 place-items-center'></ol> */}
         </section>
-      )}
+      ) : null}
     </>
   );
 };
