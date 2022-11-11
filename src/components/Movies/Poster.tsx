@@ -15,13 +15,13 @@ const Poster = (props: PosterType) => {
   const ratingStyles = `${commonStyle} gap-2 bottom-0 font-bold p-1 rounded-br-lg rounded-tl-lg`;
 
   // Img
-  const imgUrl = 'https://image.tmdb.org/t/p/original';
+  const imgUrl = `https://image.tmdb.org/t/p/original${posterUrl}`;
 
   return (
-    <li className='relative group w-24 lg:w-48'>
+    <div className={`relative group w-24 aspect-[2/3] rounded-lg lg:w-48`}>
       <img
-        className='rounded-lg'
-        src={`${imgUrl}${posterUrl}`}
+        className='rounded-lg w-full h-full'
+        src={`${imgUrl}`}
         alt={`${title} movie poster`}
       />
       <div className={overlayStyles}></div>
@@ -34,7 +34,7 @@ const Poster = (props: PosterType) => {
       <span className={ratingStyles}>
         <HeartIcon /> {` ${rating} / 10`}
       </span>
-    </li>
+    </div>
   );
 };
 

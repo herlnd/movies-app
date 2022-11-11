@@ -35,15 +35,16 @@ const SearchResults = (props: SearchResultsType) => {
   return (
     <>
       {trendingMovies.length > 0 ? (
-        <section className='flex-col p-8 items-center'>
-          <h1 className='text-3xl pb-8 text-slate-100 font-bold'>
+        <section className='flex-col px-2 pt-4 lg:px-8 lg:pt-6 items-center'>
+          <h1 className='text-xl lg:text-3xl lg:pb-4 text-slate-100 font-bold'>
             Search Results
           </h1>
-          <RatingFilter ratingValue={filterHandler} />
+          <div className='py-4'>
+            <RatingFilter ratingValue={filterHandler} />
+          </div>
           <div className='w-full'>
             <Carousel displayElements={topTen} />
           </div>
-          {/* <ol className='grid grid-cols-5 gap-8 place-items-center'></ol> */}
         </section>
       ) : null}
     </>
