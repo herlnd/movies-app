@@ -19,13 +19,13 @@ const MovieDetails = (props: MovieDetailsProps) => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <main className='flex flex-col lg:flex-row items-center lg:justify-center lg:gap-8 lg:items-start'>
+      <main className='flex flex-col md:flex-row items-center md:justify-center md:gap-8 md:items-start'>
         <img
-          className='w-11/12 mb-2 rounded-lg lg:mb-0 lg:block lg:w-64'
+          className='w-48 aspect-[2/3] mb-2 rounded-lg lg:mb-0 lg:block lg:w-64'
           src={`https://image.tmdb.org/t/p/original${posterUrl}`}
           alt={title}
         />
-        <section className='w-11/12 lg:w-96 flex flex-col bg-[#171717] p-4 rounded-lg'>
+        <section className='mx-2 md:w-96 lg:w-96 flex flex-col bg-[#171717] p-4 rounded-lg'>
           <h1 className='text-3xl text-slate-100 font-bold pb-4'>{title}</h1>
           <div className='flex gap-6 pb-4 text-slate-100'>
             <div className='flex gap-2 items-center'>

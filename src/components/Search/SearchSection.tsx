@@ -30,7 +30,7 @@ const SearchSection = (props: searchSectionType) => {
           platforms.
         </p>
         <button
-          className='btn btn-md text-xs w-1/3 font-bold bg-slate-100 border-none text-gray-800 hover:bg-slate-300 lg:btn-md lg:text-base lg:w-32'
+          className='btn btn-md text-xs w-1/3 font-bold bg-slate-100 border-none text-gray-800 hover:bg-slate-300 md:btn-md lg:text-base md:w-32'
           onClick={goToDiscoverHandler}
         >
           Discover
