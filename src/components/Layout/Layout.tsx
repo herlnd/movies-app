@@ -6,12 +6,10 @@ interface Layout {
 
 const Layout = (props: Layout) => {
   return (
-    <div className='w-full h-full flex flex-col justify-center items-center'>
-      <main className='w-full h-full lg:max-w-[1440px]'>
-        {props.children}
-        <Footer />
-      </main>
-    </div>
+    <main className='bg-[#171717] text-slate-100 h-screen max-w-screen flex flex-col justify-between items-center xl:max-w-[1440px] xl:mx-auto'>
+      {props.children}
+      <Footer />
+    </main>
   );
 };
 

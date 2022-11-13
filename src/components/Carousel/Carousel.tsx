@@ -1,31 +1,31 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 interface carouselType {
-  displayElements: JSX.Element[];
+  displayElements: JSX.Element[] | string;
 }
 
 const Carousel = ({ displayElements }: carouselType) => {
-  const carousel = useRef<HTMLDivElement | null>(null);
-
   return (
-    <div ref={carousel} className='w-full h-full overflow-hidden cursor-grab'>
-      <motion.div
-        drag='x'
-        dragElastic={0}
-        dragConstraints={carousel}
-        className='w-fit'
-      >
-        <ol className='w-fit h-fit flex items-center justify-start gap-2 lg:gap-10'>
-          {displayElements.map((item) => {
-            return (
-              <li>
-                <motion.div id='item'>{item}</motion.div>
-              </li>
-            );
+    <div className='overflow-hidden cursor-grab'>
+      {typeof displayElements === 'string' ? (
+        <div className='text-slate-300 font-bold cursor-auto pb-2'>
+          {displayElements}
+        </div>
+      ) : (
+        <Splide
+          options={{
+            autoWidth: true,
+            gap: '1em',
+            pagination: false,
+            arrows: false,
+          }}
+        >
+          {displayElements.map((item, index) => {
+            return <SplideSlide key={index}>{item}</SplideSlide>;
           })}
-        </ol>
-      </motion.div>
+        </Splide>
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom';
 import useFetchDetails from '../../hooks/useFetchDetails';
 import useUrl from '../../hooks/useUrl';
-import { HeartIcon, CalendarIcon } from '../Icons';
+import { useParams } from 'react-router-dom';
+import { HeartIcon, CalendarIcon, ArrowIcon } from '../Icons';
 import { Genre, MovieDetailsType } from '../../models/MovieDetailsType';
 import { Link } from 'react-router-dom';
 
@@ -19,13 +19,13 @@ const MovieDetails = (props: MovieDetailsProps) => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <main className='flex justify-center gap-8 items-start'>
+      <main className='flex flex-col lg:flex-row items-center lg:justify-center lg:gap-8 lg:items-start'>
         <img
-          className='w-64 rounded-lg'
+          className='w-11/12 mb-2 rounded-lg lg:mb-0 lg:block lg:w-64'
           src={`https://image.tmdb.org/t/p/original${posterUrl}`}
           alt={title}
         />
-        <section className='w-96 flex flex-col bg-gray-800 p-4 rounded-lg'>
+        <section className='w-11/12 lg:w-96 flex flex-col bg-[#171717] p-4 rounded-lg'>
           <h1 className='text-3xl text-slate-100 font-bold pb-4'>{title}</h1>
           <div className='flex gap-6 pb-4 text-slate-100'>
             <div className='flex gap-2 items-center'>
@@ -49,10 +49,11 @@ const MovieDetails = (props: MovieDetailsProps) => {
           </div>
         </section>
       </main>
-      <div className='mt-8'>
+      <div className='my-4'>
         <Link to='/'>
-          <button className='btn bg-slate-100 border-slate-100 text-gray-800 hover:bg-slate-300 hover:border-slate-300'>
-            Go back
+          <button className='btn bg-slate-100 border-none text-gray-800 hover:bg-slate-300'>
+            <ArrowIcon />
+            <span className='pl-2'>Go Back</span>
           </button>
         </Link>
       </div>

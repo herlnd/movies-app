@@ -1,29 +1,29 @@
 const useUrl = (fetchAction: string, fetchTerm?: string) => {
-  const baseUrl = "https://api.themoviedb.org/3/";
-  const key = "5fc0c948b880fd0a44a19c43f9b6d881";
+  const baseUrl = 'https://api.themoviedb.org/3/';
+  const key = import.meta.env.VITE_API_KEY;
   let action;
   let param;
   let term;
   let movie;
 
-  if (fetchAction === "search") {
-    action = "search/";
-    param = "&query=";
+  if (fetchAction === 'search') {
+    action = 'search/';
+    param = '&query=';
     term = fetchTerm;
-    movie = "movie";
+    movie = 'movie';
   }
 
-  if (fetchAction === "discover") {
-    action = "discover/";
-    param = "&sort_by=";
-    term = "popularity.desc";
-    movie = "movie";
+  if (fetchAction === 'discover') {
+    action = 'discover/';
+    param = '&sort_by=';
+    term = 'popularity.desc';
+    movie = 'movie';
   }
 
-  if (fetchAction === "getMovie") {
-    action = "movie/";
-    param = "";
-    term = "";
+  if (fetchAction === 'getMovie') {
+    action = 'movie/';
+    param = '';
+    term = '';
     movie = fetchTerm;
   }
 

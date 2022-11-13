@@ -10,8 +10,8 @@ const Hero = (props: Hero) => {
   const imgUrl = props.bgImg ? props.bgImg : defaultImg;
 
   return (
-    <div
-      className='hero h-1/4 md:h-1/3 xl:h-1/2'
+    <section
+      className='hero'
       style={{
         backgroundImage: `url(${imgUrl})`,
       }}
@@ -22,7 +22,7 @@ const Hero = (props: Hero) => {
           {props.children}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
