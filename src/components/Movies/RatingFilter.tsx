@@ -9,8 +9,10 @@ const RatingFilter = (props: RatingFilterType) => {
   const [rating, setRating] = useState(0);
 
   return (
-    <div className='flex bg-slate-100 w-fit p-4 rounded-lg mb-8 items-center'>
-      <h2 className='font-bold text-lg text-gray-800 pr-2'>Filter by rating</h2>
+    <div className='flex bg-slate-100 w-fit p-2 lg:p-4 rounded-lg items-center'>
+      <h2 className='font-bold text-base lg:text-lg text-gray-800 pr-2'>
+        Filter by rating
+      </h2>
       {[...Array(5)].map((item, idx) => {
         const index = idx * 2 + 2;
         return (

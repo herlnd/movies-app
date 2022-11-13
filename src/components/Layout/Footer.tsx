@@ -1,10 +1,20 @@
+import { GitHubIcon } from '../Icons';
+
 const Footer = () => {
   return (
-    <footer className="flex justify-center p-4 bg-neutral text-slate-100">
-      <div>
-        <span>React Movies App | </span>
-        <span className="font-bold">
-          <a href="https://github.com/herlnd">herlnd 🗿</a>
+    <footer className='w-full flex justify-center items-center p-4 bg-black text-slate-100 text-sm lg:text-base'>
+      <div className='flex items-center justify-center gap-2'>
+        <span>
+          © 2022. Made by{' '}
+          <a href='https://github.com/herlnd' className='font-bold'>
+            herlnd 🗿
+          </a>
+        </span>
+        <span>|</span>
+        <span>
+          <a href='https://github.com/herlnd/react-movies-app'>
+            <GitHubIcon />
+          </a>
         </span>
       </div>
     </footer>
