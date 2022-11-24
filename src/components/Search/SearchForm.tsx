@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, FormEvent } from 'react';
 import { SearchIcon } from '../Icons';
 
 interface SearchType {
@@ -15,8 +15,12 @@ const Search = (props: SearchType) => {
     setSearchTerm(e.currentTarget.value);
   };
 
+  const formHandler = (e: FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className='form-control w-full px-2 lg:px-0'>
+    <form className='form-control w-full px-2 lg:px-0' onSubmit={formHandler}>
       <div className='input-group flex justify-center items-center'>
         <input
           type='text'

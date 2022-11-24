@@ -19,8 +19,10 @@ const MoviesList = React.forwardRef<HTMLElement>((props, ref) => {
   });
 
   return (
-    <section ref={ref} className='w-full mb-6'>
-      <h1 className='text-xl font-bold pb-2'>Trending Movies</h1>
+    <section ref={ref} className='w-full'>
+      <h1 className='text-xl font-bold pb-2 lg:text-2xl lg:pb-4'>
+        Trending Movies
+      </h1>
       <Carousel displayElements={topTwenty} />
     </section>
   );

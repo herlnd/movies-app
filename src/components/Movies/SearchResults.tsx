@@ -38,8 +38,10 @@ const SearchResults = (props: SearchResultsType) => {
   return (
     <section className='w-full'>
       {trendingMovies.length > 0 ? (
-        <section className='mb-6'>
-          <h1 className='text-xl font-bold pb-2'>Top Results</h1>
+        <section className='pb-4 lg:pb-8'>
+          <h1 className='text-xl font-bold pb-2 lg:text-2xl lg:pb-4'>
+            Top Results
+          </h1>
           <div className='pb-4'>
             <RatingFilter ratingValue={filterHandler} />
           </div>

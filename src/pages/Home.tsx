@@ -26,7 +26,7 @@ const Home = () => {
             searchTerm={showSearchTerm}
           />
         </Hero>
-        <section className='bg-[#171717] h-fit w-full flex flex-col justify-start items-center px-2 mt-4 lg:px-8 lg:mb-4 lg:mt-8'>
+        <section className='bg-[#171717] w-full flex flex-col justify-start items-center px-2 py-4 lg:p-8'>
           <SearchResults searchTerm={searchTerm} />
           <MoviesList ref={discoverRef} />
         </section>
